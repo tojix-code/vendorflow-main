@@ -1,10 +1,18 @@
+import { z } from "zod";
 import { createTRPCRouter, publicProcedure } from "../trpc";
 
 export const postRouter = createTRPCRouter({
-  getLatest: publicProcedure.query(() => {
-    return {
-      title: "Latest Post",
-      content: "Hello from VendorFlow 🚀",
-    };
-  }),
+  
+  // ✅ ADD THIS
+  create: publicProcedure
+    .input(z.object({ name: z.string() }))
+    .mutation(async ({ ctx, input }) => {
+      // example (adjust based on your DB)
+      return ctx.db.post.create({
+        data: {
+          name: input.name,
+        },
+      });
+    }),
+
 });
