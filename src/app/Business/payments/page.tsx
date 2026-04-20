@@ -396,6 +396,15 @@ export default function BusinessPaymentsPage() {
 										<p className="text-lg font-bold text-[#1b3a5c]">
 											₹{Number(p.amount).toLocaleString()}
 										</p>
+
+										{p.invoiceFile &&(
+											<Button 
+											size="sm"
+											value="variant"
+											onClick={() => window.open(p.invoiceFile, "_blank")} >
+												📄 Invoice
+											</Button>
+										)}
 										<Button
 											className="border-black/10"
 											size="sm"
