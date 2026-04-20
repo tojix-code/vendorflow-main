@@ -401,7 +401,7 @@ export default function BusinessPaymentsPage() {
 											<Button 
 											size="sm"
 											value="variant"
-											onClick={() => window.open(p.invoiceFile, "_blank")} >
+											onClick={() => window.open(p.invoiceFile!, "_blank")} >
 												📄 Invoice
 											</Button>
 										)}
