@@ -483,10 +483,20 @@ export default function BusinessPaymentsPage() {
                           size="sm"
                           variant="outline"
                           onClick={() => {
-                            if (!p.invoiceFile) return;
+                            if (!p.invoiceFile) return; // ✅ guard
 
-                            const [meta, base64Data] = p.invoiceFile.split(",");
-                            const mime = meta.split(":")[1].split(";")[0]; // ✅ auto detect type
+                            const parts = p.invoiceFile.split(",");
+
+                            if (parts.length < 2) return; // ✅ safety check
+
+                            const meta = parts[0];
+                            const base64Data = parts[1];
+
+                            if (!meta || !base64Data) return; // ✅ extra safety
+
+                            const mime =
+                              meta.split(":")[1]?.split(";")[0] ||
+                              "application/octet-stream";
 
                             const byteCharacters = atob(base64Data);
                             const byteNumbers = new Array(byteCharacters.length)
