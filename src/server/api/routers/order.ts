@@ -40,6 +40,7 @@ export const orderRouter = createTRPCRouter({
 				where: eq(order.id, input.id),
 				with: {
 					vendor: true,
+					business: true,
 					items: true,
 					payments: true,
 				},
