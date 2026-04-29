@@ -421,7 +421,7 @@ export default function LandingPage() {
 							</Link>
 						))}
 					</div>
-					<p className="text-sm text-white/30">&copy; 2025 VendorFlow. All rights reserved.</p>
+					<p className="text-sm text-white/30">&copy; 2026 VendorFlow. All rights reserved.</p>
 				</div>
 			</footer>
 		</div>
