@@ -8,7 +8,12 @@ export default function LandingPage() {
 		{ label: "Pricing", href: "#cta" },
 	];
 
-	const footerLinks = ["Privacy", "Terms", "Support", "Contact"];
+	const footerLinks = [
+		{ label: "Privacy", href: "/privacy" },
+		{ label: "Terms", href: "/terms" },
+		{ label: "Support", href: "/support" },
+		{ label: "Contact", href: "/contact" },
+	];
 
 	return (
 		<div className="min-h-screen bg-white font-sans">
@@ -406,10 +411,14 @@ export default function LandingPage() {
 						<span className="text-lg font-bold text-white">VendorFlow</span>
 					</div>
 					<div className="flex gap-6">
-						{footerLinks.map((l) => (
-							<a key={l} href="/" className="text-sm text-white/40 transition hover:text-white">
-								{l}
-							</a>
+						{footerLinks.map((link) => (
+							<Link
+								key={link.label}
+								href={link.href}
+								className="text-sm text-white/40 transition hover:text-white"
+							>
+								{link.label}
+							</Link>
 						))}
 					</div>
 					<p className="text-sm text-white/30">&copy; 2025 VendorFlow. All rights reserved.</p>
