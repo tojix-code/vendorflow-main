@@ -97,7 +97,7 @@ export default function LandingPage() {
 									<span className="h-3 w-3 rounded-full bg-red-400" />
 									<span className="h-3 w-3 rounded-full bg-yellow-400" />
 									<span className="h-3 w-3 rounded-full bg-green-400" />
-									<span className="ml-4 rounded-md bg-[#f0ede8] px-3 py-1 text-[11px] text-[#888]">vendorflow.app/business/dashboard</span>
+									<span className="ml-4 rounded-md bg-[#f0ede8] px-3 py-1 text-[11px] text-[#888]">Vendorflow.co.in/business/dashboard</span>
 								</div>
 
 								{/* Dashboard content */}
